@@ -48,20 +48,49 @@ io.configure(function () {
 
 console.log('getting my twitters on');
 
-console.log(nconf.get('twitter_consumer_key'));
-console.log(nconf.get('twitter_consumer_secret'));
-console.log(nconf.get('twitter_access_token'));
-console.log(nconf.get('twitter_access_token_secret'));
+//console.log(nconf.get('twitter_consumer_key'));
+//console.log(nconf.get('twitter_consumer_secret'));
+//console.log(nconf.get('twitter_access_token'));
+//console.log(nconf.get('twitter_access_token_secret'));
 
 var t = new twit({
-    consumer_key: nconf.get('twitter_consumer_key'),
-    consumer_secret: nconf.get('twitter_consumer_secret'),
-    access_token: nconf.get('twitter_access_token'),
-    access_token_secret: nconf.get('twitter_access_token_secret')
+    consumer_key: 'qTaLJJ9lQwfKbeLP0qT4VA',
+    consumer_secret: 'iN6ps9NKOlKAXRQ3DS56zKnqkAxI8hde5rfVrpU',
+    access_token: '15678105-T2NLXrSkPAYvcY9z1EbBktaJQk7TsQTCgtTa3RMNg',
+    access_token_secret: 'Bc0lG5OkyJ6DZlvFoqbO3VyLreofu2DRtcf6dcXH8'
 });
 
-console.log('start the stream');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log('start the stream');
+//'-180,-90,180,90'
+//'140,-200,140,-200'
+//'-3.6,40,-3.6,40' 
 t.stream('statuses/filter', { 'locations': '-180,-90,180,90' })
     .on('tweet', function (tweet) {
         if (tweet.coordinates != null) {
